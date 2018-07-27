@@ -19,6 +19,11 @@ mail = Mail(app)
 
 @app.route('/')
 def student():
+    return render_template('index.html')
+
+
+@app.route('/ashoka')
+def ashoka_home():
     return render_template('index1.html')
 
 
@@ -80,4 +85,4 @@ def result1():
 
 
 if __name__ == '__main__':
-    app.run(threaded=True, debug=True)
+    app.run(debug=True)
