@@ -1,9 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for
 import requests
+import ConfigParser
 from flask_mail import Mail, Message
 
 app = Flask(__name__)
 import csv
+
+config = ConfigParser.ConfigParser()
+config.readfp(open(r'config'))
+email = config.get('Email', 'email')
+password = config.get('Email', 'password')
 
 app.config.update(
     DEBUG=True,
@@ -11,20 +17,20 @@ app.config.update(
     MAIL_SERVER='smtp.gmail.com',
     MAIL_PORT=465,
     MAIL_USE_SSL=True,
-    MAIL_USERNAME='ashoka.changemakerday@gmail.com',
-    MAIL_PASSWORD='mashchange'
+    MAIL_USERNAME=email,
+    MAIL_PASSWORD=password
 )
 mail = Mail(app)
 
 
 @app.route('/')
 def student():
-    return render_template('index.html')
+    return render_template('mash.html')
 
 
 @app.route('/ashoka')
 def ashoka_home():
-    return render_template('index1.html')
+    return render_template('ashoka.html')
 
 
 @app.route('/forms', methods=['POST'])

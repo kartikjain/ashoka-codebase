@@ -28,7 +28,8 @@ html{
 /* ======================================== */
 .row{
     /* page width */
-    width: 1140px;
+    width: 100%;
+    height: inherit;
     /* margin of the width */
     margin: 0 auto;
 }
@@ -45,11 +46,17 @@ h3{
     font-weight: 300;
     text-transform: uppercase;
 }
+
+/* font weight of the subheading in section area */
+.sec h2{
+  font-weight: 500;
+}
+
 h1{
     margin: 0;
     margin-bottom: 20px;
     color: white;
-    font-size: 200%;
+    font-size: 40px;
     word-spacing: 5px;
     letter-spacing: 3px;
 }
@@ -77,12 +84,13 @@ h2 {
     margin-bottom: 15px;
   }
 
+
   h3:after {
     display: block;
     height: 2px;
     background-color:#515175;
     content: " ";
-    width: 200px;
+    width: 150px;
     margin: 0 auto;
     margin-top: 10px;
   }
@@ -118,9 +126,9 @@ header{
 /* ---------text_box---------------- */
 .text_box{
     position: absolute;
-    width: 1140px;
+    width: 100%;
     top: 38%;
-    left: 52%;
+    left: 50%;
     transform: translate(-50%,-50%);
     text-align: center;
 }
@@ -154,6 +162,14 @@ display: none;
 /* ======================================== */
 /* main_navigation_start(still within header) */
 /* ======================================== */
+
+.menu{
+  color: #ffffffff;
+  margin: 1%;
+  font-size: 30px;
+  cursor: pointer;
+}
+
 .main_navigation {
     float: right;
     list-style-type: none;
@@ -168,25 +184,34 @@ display: none;
 
   /* main nav states */
   .main_navigation li a:link,
-  .main_navigation li a:visited {
+  .main_navigation li a:visited,
+  .side1 a:link,
+  .side1 a:visited{
     color: white;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 90%;
+    font-size: 20px;
     border: 2px solid transparent;
     border-radius: 200px;
     padding: 5px;
     transition: border-bottom 0.2s;
     letter-spacing: 2px;
     word-spacing: 3px;
-
   }
 
   /* main nav hover */
   .main_navigation li a:hover,
-  .main_navigation li a:active {
+  .main_navigation li a:active, 
+  .side1 a:hover,
+  .side1 a:active{
     border-bottom: 2px solid  #18adab;
     color:white;
+  }
+
+  .side1{
+    height: 100% ;
+    width: 0px ;
+    overflow-x: hidden;
   }
 
 /* ======================================== */
@@ -225,7 +250,6 @@ display: none;
   font-size: 90%;
   border: 2px solid transparent;
   border-radius: 200px;
-  /* padding: 5px; */
   transition: border-bottom 0.2s;
   letter-spacing: 2px;
   word-spacing: 3px;
@@ -236,7 +260,6 @@ display: none;
   .sticky  .main_navigation li a:active {
     border-bottom: 2px solid  #18adab;
     color:black;
-    /* padding-bottom: 10px; */
   }
 
 
@@ -300,14 +323,19 @@ transition: all 0.3s;
 /* background-color: #bdf5b11c; */
 background-color: white;
 }
+.sec{
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+
 .sec h2{
   /* margin-top: 5%; */
-  padding-top: 45px;
+  padding-top: 32px;
   margin-bottom:5%;
 }
 
 .sec1 p{
-  margin-bottom: 20%;
+  margin-bottom: 7%;
 }
 /* ======================================== */
 /* first_section,vision_end*/
@@ -317,18 +345,24 @@ background-color: white;
 /* second_section,about_ashoka_foundation_start*/
 /* ======================================== */
 .sec2{
-
   background-color: rgba(255, 228, 196, 0.205);
 }
 
 .sec2 p{
   transform: translateY(0%);
   font-size: 110%;
-  /* background-color: rgba(255, 228, 196, 0.61); */
-  margin-top: 80px;
-  margin-bottom: 15%;
+  margin-bottom: 3%;
   z-index: 9800;
 }
+
+/* links in section2 */
+.sec2 a{
+  text-decoration: none;
+  color: #286665;
+  font-weight: 400;
+}
+
+
 /* ======================================== */
 /*second_section,about_ashoka_foundation_end*/
 /* ======================================== */
@@ -336,6 +370,7 @@ background-color: white;
 /* ======================================== */
 /*third_section,wayforward_start*/
 /* ======================================== */
+
 .sec3{
   background-color: hsla(179, 78%, 39%, 0.027);
   margin-bottom: 5%;
@@ -364,9 +399,8 @@ background-color: white;
   }
 
 
-}
+
 .box p{
-  text-align:none;
   line-height: 170%;
   letter-spacing: 2px;
   word-spacing: 2px;
@@ -374,10 +408,10 @@ background-color: white;
 }
 .box img{
   height: 200px;
-  width: auto;
+  width: 100%;
   padding-bottom: 30px;
   /* */ /* transform: translate(-50%,-50%); */
-  transform: translateX(260%)
+  /* transform: translateX(260%) */
 }
 .box h3{
   text-align: center;
@@ -386,6 +420,7 @@ background-color: white;
 .sec3_part1{
 margin-top: 40px;
 }
+
 
 /* ======================================== */
 /*third_section,wayforward_end*/
@@ -405,8 +440,8 @@ margin-top: 40px;
 }
 
 .section_form h2{
-  padding-top: 50px;
   letter-spacing: 3px;
+  margin-top: 4%;
 }
 
 .contact_form {
@@ -447,7 +482,7 @@ margin-top: 40px;
     outline:none;
   }
 
-  input[type="button"] {
+  input[type="submit"] {
     border: none;
     border-radius: 200px;
     background-color:#0f304f;
@@ -457,13 +492,13 @@ margin-top: 40px;
     margin-bottom: 40px;
     transition: all 0.2s;
   }
-input[type='button']:hover{
+input[type='submit']:hover{
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
   background-color: #0f304f8f;
 }
 
-input[type='button']:active{
+input[type='submit']:active{
   transform: translateY(-1px);
   box-shadow:0 5px 10px rgba(255, 255, 255, 0.15);
 }
@@ -501,6 +536,11 @@ input[type='button']:active{
   background-attachment: fixed;
   color: #fff;
 }
+
+.span-1-of-3{
+  text-align: center;
+}
+
 
 /* ======================================== */
 /*sixth_section,query_end*/
@@ -590,5 +630,166 @@ footer p{
 .js--wp4--img2.animated,
 .js--wp4--img3.animated,
 .js--wp4--img4.animated{
-  margin-left: 42%
+  /* margin-left: 42% */
 }
+
+
+/*xxxxxxxxx-MEDIA QUERIES-xxxxxxxxxxxx*/
+
+
+@media screen and (max-width:728px){
+  .main_navigation{
+    text-align: center !important;
+    float: none !important;
+    margin-right: 0%;
+  }
+
+  .sticky .main_navigation{
+    margin-right: 0%;
+  }
+  .main_navigation li {
+    margin: 0px 20px !important;
+  }
+
+  .main_navigation li a:link,
+  .main_navigation li a:visited{
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px -12px;
+    font-weight: 400 !important;
+  }
+
+  h1{
+    font-size: 30px;
+    margin-top: 8%;
+    font-weight: bolder;
+  }
+
+  h2{
+    font-size: 25px;
+  }
+  .sec1 p,
+  .sec2 p{
+    margin-bottom: 5%;
+  }
+
+  .sec2 p{
+    margin-top: 6%;
+  }
+
+  p{
+    line-height: 110% !important;
+    word-spacing: 1px !important;
+    letter-spacing: 1px !important;
+  }
+
+  .section_form h2{
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  .contact_form{
+    width: 85%;
+  }
+
+  input{
+    margin-bottom: 8%;
+  }
+
+  label{
+    font-weight: 400;
+  }
+
+  .span-1-of-3{
+    text-align: left;
+  }
+}
+
+@media screen and (max-width:440px){
+
+  .main_navigation{
+    text-align: center !important;
+    margin-top: 10px !important;
+    float: none !important;
+  }
+
+  .main_navigation li{
+    margin: 0px 20px !important;
+  }
+
+  .main_navigation li a:link,
+  .main_navigation li a:visited{
+    font-size: 15px !important;
+    margin: 0px -20px;
+    padding: 2px;
+    font-weight: 400 !important;
+    word-spacing: 5px !important;
+    letter-spacing: 1px !important;
+  }
+
+  h1{
+    font-size: 20px !important;
+    font-weight: bolder !important;
+  }
+
+  h2{
+    font-size: 15px !important;
+    padding: 0px 12px 0px 12px;
+  }
+
+  p{
+    margin-top: 20px !important;
+    font-size: 20px !important;
+    line-height: 110% !important;
+    letter-spacing: 0px !important;
+    word-spacing: 1px !important;
+  }
+
+  .subhead{
+    font-size: 20px !important;
+    font-weight: 300;
+  }
+
+  .box h3{
+    font-weight: 500;
+  }
+
+  .box p{
+    margin-top: 5px !important;
+  }
+
+  .section_form h2{
+    font-size: 30px !important;
+    letter-spacing: 0px !important;
+  }
+
+  .span-1-of-3{
+    text-align: left;
+  }
+
+  .contact_form{
+    width: 80%;
+  }
+
+  .contact_form input,
+  input{
+    margin-bottom: 8% !important;
+  }
+
+  label{
+    font-weight: 400;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type='date'],
+  input[type='number'],
+  textarea {
+    width: 85%;
+    font-size: 20px;
+    padding-top: 1px;
+    font-weight: 300;
+  }
+}
+
+/* @media screen and max() */
