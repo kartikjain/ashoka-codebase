@@ -9,7 +9,7 @@ itsdangerous==0.24
 Jinja2==2.10
 MarkupSafe==1.0
 requests>=2.20.0
-urllib3==1.23
+urllib3==1.26.5
 uWSGI==2.0.17.1
 Werkzeug==0.14.1
 configParser==3.5.0
